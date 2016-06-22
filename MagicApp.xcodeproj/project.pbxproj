@@ -1,0 +1,728 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		302633721D1AF17D00B16C27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633711D1AF17D00B16C27 /* AppDelegate.swift */; };
+		302633741D1AF17D00B16C27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633731D1AF17D00B16C27 /* ViewController.swift */; };
+		302633771D1AF17D00B16C27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302633751D1AF17D00B16C27 /* Main.storyboard */; };
+		3026337A1D1AF17D00B16C27 /* MagicApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 302633781D1AF17D00B16C27 /* MagicApp.xcdatamodeld */; };
+		3026337C1D1AF17D00B16C27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3026337B1D1AF17D00B16C27 /* Assets.xcassets */; };
+		3026337F1D1AF17D00B16C27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3026337D1D1AF17D00B16C27 /* LaunchScreen.storyboard */; };
+		3026338A1D1AF17E00B16C27 /* MagicAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633891D1AF17E00B16C27 /* MagicAppTests.swift */; };
+		302633951D1AF17E00B16C27 /* MagicAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633941D1AF17E00B16C27 /* MagicAppUITests.swift */; };
+		302633A31D1AF62200B16C27 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633A21D1AF62200B16C27 /* CategoryViewController.swift */; };
+		302633A51D1AF63800B16C27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633A41D1AF63800B16C27 /* StartViewController.swift */; };
+		302633A81D1AF86D00B16C27 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633A61D1AF86D00B16C27 /* Category+CoreDataProperties.swift */; };
+		302633A91D1AF86D00B16C27 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633A71D1AF86D00B16C27 /* Category.swift */; };
+		302633AB1D1B29D500B16C27 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633AA1D1B29D500B16C27 /* ChildViewController.swift */; };
+		302633AD1D1B3E4F00B16C27 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302633AC1D1B3E4F00B16C27 /* CategoryTableViewCell.swift */; };
+		3CFF4525CAC14BAECF31C8F2 /* Pods_MagicApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12DD2FB521C374A1654428A3 /* Pods_MagicApp.framework */; };
+		537F8F4CC744C52B3C0ED5E2 /* Pods_MagicAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB72172F8BDFB36DC67FD843 /* Pods_MagicAppTests.framework */; };
+		C60913EAF24279BB0FE6AA11 /* Pods_MagicAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADA012F8B801198B29BB2856 /* Pods_MagicAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		302633861D1AF17E00B16C27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 302633661D1AF17D00B16C27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3026336D1D1AF17D00B16C27;
+			remoteInfo = MagicApp;
+		};
+		302633911D1AF17E00B16C27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 302633661D1AF17D00B16C27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3026336D1D1AF17D00B16C27;
+			remoteInfo = MagicApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12DD2FB521C374A1654428A3 /* Pods_MagicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3026336E1D1AF17D00B16C27 /* MagicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		302633711D1AF17D00B16C27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		302633731D1AF17D00B16C27 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		302633761D1AF17D00B16C27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		302633791D1AF17D00B16C27 /* MagicApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MagicApp.xcdatamodel; sourceTree = "<group>"; };
+		3026337B1D1AF17D00B16C27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3026337E1D1AF17D00B16C27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		302633801D1AF17D00B16C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		302633851D1AF17E00B16C27 /* MagicAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		302633891D1AF17E00B16C27 /* MagicAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicAppTests.swift; sourceTree = "<group>"; };
+		3026338B1D1AF17E00B16C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		302633901D1AF17E00B16C27 /* MagicAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		302633941D1AF17E00B16C27 /* MagicAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicAppUITests.swift; sourceTree = "<group>"; };
+		302633961D1AF17E00B16C27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		302633A21D1AF62200B16C27 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		302633A41D1AF63800B16C27 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		302633A61D1AF86D00B16C27 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		302633A71D1AF86D00B16C27 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		302633AA1D1B29D500B16C27 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
+		302633AC1D1B3E4F00B16C27 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		3DE0B95DA40D6D1E876CE8BB /* Pods-MagicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicApp/Pods-MagicApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5A1F04589C3D0A0C3ED920E7 /* Pods-MagicAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicAppTests/Pods-MagicAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6EA7BCDEC6B840640F15F734 /* Pods-MagicAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicAppTests/Pods-MagicAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		846C232F347219606744E47B /* Pods-MagicAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicAppUITests/Pods-MagicAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ADA012F8B801198B29BB2856 /* Pods_MagicAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB72172F8BDFB36DC67FD843 /* Pods_MagicAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MagicAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F08710158AF7C15228DA38 /* Pods-MagicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MagicApp/Pods-MagicApp.release.xcconfig"; sourceTree = "<group>"; };
+		FC4741EABF0EA0DFC1E4C829 /* Pods-MagicAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MagicAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MagicAppUITests/Pods-MagicAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3026336B1D1AF17D00B16C27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CFF4525CAC14BAECF31C8F2 /* Pods_MagicApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		302633821D1AF17E00B16C27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				537F8F4CC744C52B3C0ED5E2 /* Pods_MagicAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3026338D1D1AF17E00B16C27 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60913EAF24279BB0FE6AA11 /* Pods_MagicAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		101A19E7458C92619D2DE863 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DE0B95DA40D6D1E876CE8BB /* Pods-MagicApp.debug.xcconfig */,
+				D5F08710158AF7C15228DA38 /* Pods-MagicApp.release.xcconfig */,
+				6EA7BCDEC6B840640F15F734 /* Pods-MagicAppTests.debug.xcconfig */,
+				5A1F04589C3D0A0C3ED920E7 /* Pods-MagicAppTests.release.xcconfig */,
+				FC4741EABF0EA0DFC1E4C829 /* Pods-MagicAppUITests.debug.xcconfig */,
+				846C232F347219606744E47B /* Pods-MagicAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		302633651D1AF17D00B16C27 = {
+			isa = PBXGroup;
+			children = (
+				302633A61D1AF86D00B16C27 /* Category+CoreDataProperties.swift */,
+				302633A71D1AF86D00B16C27 /* Category.swift */,
+				302633701D1AF17D00B16C27 /* MagicApp */,
+				302633881D1AF17E00B16C27 /* MagicAppTests */,
+				302633931D1AF17E00B16C27 /* MagicAppUITests */,
+				3026336F1D1AF17D00B16C27 /* Products */,
+				101A19E7458C92619D2DE863 /* Pods */,
+				948F2CAFA2C9114A9559AB1F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3026336F1D1AF17D00B16C27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3026336E1D1AF17D00B16C27 /* MagicApp.app */,
+				302633851D1AF17E00B16C27 /* MagicAppTests.xctest */,
+				302633901D1AF17E00B16C27 /* MagicAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		302633701D1AF17D00B16C27 /* MagicApp */ = {
+			isa = PBXGroup;
+			children = (
+				302633711D1AF17D00B16C27 /* AppDelegate.swift */,
+				302633731D1AF17D00B16C27 /* ViewController.swift */,
+				302633751D1AF17D00B16C27 /* Main.storyboard */,
+				3026337B1D1AF17D00B16C27 /* Assets.xcassets */,
+				3026337D1D1AF17D00B16C27 /* LaunchScreen.storyboard */,
+				302633801D1AF17D00B16C27 /* Info.plist */,
+				302633781D1AF17D00B16C27 /* MagicApp.xcdatamodeld */,
+				302633A21D1AF62200B16C27 /* CategoryViewController.swift */,
+				302633A41D1AF63800B16C27 /* StartViewController.swift */,
+				302633AA1D1B29D500B16C27 /* ChildViewController.swift */,
+				302633AC1D1B3E4F00B16C27 /* CategoryTableViewCell.swift */,
+			);
+			path = MagicApp;
+			sourceTree = "<group>";
+		};
+		302633881D1AF17E00B16C27 /* MagicAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				302633891D1AF17E00B16C27 /* MagicAppTests.swift */,
+				3026338B1D1AF17E00B16C27 /* Info.plist */,
+			);
+			path = MagicAppTests;
+			sourceTree = "<group>";
+		};
+		302633931D1AF17E00B16C27 /* MagicAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				302633941D1AF17E00B16C27 /* MagicAppUITests.swift */,
+				302633961D1AF17E00B16C27 /* Info.plist */,
+			);
+			path = MagicAppUITests;
+			sourceTree = "<group>";
+		};
+		948F2CAFA2C9114A9559AB1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12DD2FB521C374A1654428A3 /* Pods_MagicApp.framework */,
+				BB72172F8BDFB36DC67FD843 /* Pods_MagicAppTests.framework */,
+				ADA012F8B801198B29BB2856 /* Pods_MagicAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3026336D1D1AF17D00B16C27 /* MagicApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 302633991D1AF17E00B16C27 /* Build configuration list for PBXNativeTarget "MagicApp" */;
+			buildPhases = (
+				487892B01E49A482BA305BB6 /* [CP] Check Pods Manifest.lock */,
+				3026336A1D1AF17D00B16C27 /* Sources */,
+				3026336B1D1AF17D00B16C27 /* Frameworks */,
+				3026336C1D1AF17D00B16C27 /* Resources */,
+				09D7E3A12DAC74AE4FFCC0CE /* [CP] Embed Pods Frameworks */,
+				E336C0E7A243B7B8B5C250F9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicApp;
+			productName = MagicApp;
+			productReference = 3026336E1D1AF17D00B16C27 /* MagicApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		302633841D1AF17E00B16C27 /* MagicAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3026339C1D1AF17E00B16C27 /* Build configuration list for PBXNativeTarget "MagicAppTests" */;
+			buildPhases = (
+				44F9990E70C8FE3AE57EB73C /* [CP] Check Pods Manifest.lock */,
+				302633811D1AF17E00B16C27 /* Sources */,
+				302633821D1AF17E00B16C27 /* Frameworks */,
+				302633831D1AF17E00B16C27 /* Resources */,
+				9EE7A765BB8C60BBD7B578FC /* [CP] Embed Pods Frameworks */,
+				0332F676E2DFBD71D8EAD573 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				302633871D1AF17E00B16C27 /* PBXTargetDependency */,
+			);
+			name = MagicAppTests;
+			productName = MagicAppTests;
+			productReference = 302633851D1AF17E00B16C27 /* MagicAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3026338F1D1AF17E00B16C27 /* MagicAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3026339F1D1AF17E00B16C27 /* Build configuration list for PBXNativeTarget "MagicAppUITests" */;
+			buildPhases = (
+				6D29458BE172BBA180FB4010 /* [CP] Check Pods Manifest.lock */,
+				3026338C1D1AF17E00B16C27 /* Sources */,
+				3026338D1D1AF17E00B16C27 /* Frameworks */,
+				3026338E1D1AF17E00B16C27 /* Resources */,
+				82E58B6CD5A915732FA8DAE7 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				302633921D1AF17E00B16C27 /* PBXTargetDependency */,
+			);
+			name = MagicAppUITests;
+			productName = MagicAppUITests;
+			productReference = 302633901D1AF17E00B16C27 /* MagicAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		302633661D1AF17D00B16C27 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "TEAM-HLT";
+				TargetAttributes = {
+					3026336D1D1AF17D00B16C27 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					302633841D1AF17E00B16C27 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3026336D1D1AF17D00B16C27;
+					};
+					3026338F1D1AF17E00B16C27 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 3026336D1D1AF17D00B16C27;
+					};
+				};
+			};
+			buildConfigurationList = 302633691D1AF17D00B16C27 /* Build configuration list for PBXProject "MagicApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 302633651D1AF17D00B16C27;
+			productRefGroup = 3026336F1D1AF17D00B16C27 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3026336D1D1AF17D00B16C27 /* MagicApp */,
+				302633841D1AF17E00B16C27 /* MagicAppTests */,
+				3026338F1D1AF17E00B16C27 /* MagicAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3026336C1D1AF17D00B16C27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3026337F1D1AF17D00B16C27 /* LaunchScreen.storyboard in Resources */,
+				3026337C1D1AF17D00B16C27 /* Assets.xcassets in Resources */,
+				302633771D1AF17D00B16C27 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		302633831D1AF17E00B16C27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3026338E1D1AF17E00B16C27 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0332F676E2DFBD71D8EAD573 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicAppTests/Pods-MagicAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		09D7E3A12DAC74AE4FFCC0CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicApp/Pods-MagicApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44F9990E70C8FE3AE57EB73C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		487892B01E49A482BA305BB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6D29458BE172BBA180FB4010 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82E58B6CD5A915732FA8DAE7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicAppUITests/Pods-MagicAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EE7A765BB8C60BBD7B578FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicAppTests/Pods-MagicAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E336C0E7A243B7B8B5C250F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MagicApp/Pods-MagicApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3026336A1D1AF17D00B16C27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302633A51D1AF63800B16C27 /* StartViewController.swift in Sources */,
+				302633A81D1AF86D00B16C27 /* Category+CoreDataProperties.swift in Sources */,
+				302633A31D1AF62200B16C27 /* CategoryViewController.swift in Sources */,
+				302633741D1AF17D00B16C27 /* ViewController.swift in Sources */,
+				302633721D1AF17D00B16C27 /* AppDelegate.swift in Sources */,
+				3026337A1D1AF17D00B16C27 /* MagicApp.xcdatamodeld in Sources */,
+				302633A91D1AF86D00B16C27 /* Category.swift in Sources */,
+				302633AB1D1B29D500B16C27 /* ChildViewController.swift in Sources */,
+				302633AD1D1B3E4F00B16C27 /* CategoryTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		302633811D1AF17E00B16C27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3026338A1D1AF17E00B16C27 /* MagicAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3026338C1D1AF17E00B16C27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				302633951D1AF17E00B16C27 /* MagicAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		302633871D1AF17E00B16C27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3026336D1D1AF17D00B16C27 /* MagicApp */;
+			targetProxy = 302633861D1AF17E00B16C27 /* PBXContainerItemProxy */;
+		};
+		302633921D1AF17E00B16C27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3026336D1D1AF17D00B16C27 /* MagicApp */;
+			targetProxy = 302633911D1AF17E00B16C27 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		302633751D1AF17D00B16C27 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				302633761D1AF17D00B16C27 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3026337D1D1AF17D00B16C27 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3026337E1D1AF17D00B16C27 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		302633971D1AF17E00B16C27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		302633981D1AF17E00B16C27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3026339A1D1AF17E00B16C27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DE0B95DA40D6D1E876CE8BB /* Pods-MagicApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagicApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hltcorp.MagicApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3026339B1D1AF17E00B16C27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5F08710158AF7C15228DA38 /* Pods-MagicApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagicApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hltcorp.MagicApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3026339D1D1AF17E00B16C27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EA7BCDEC6B840640F15F734 /* Pods-MagicAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MagicAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hltcorp.MagicAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicApp.app/MagicApp";
+			};
+			name = Debug;
+		};
+		3026339E1D1AF17E00B16C27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A1F04589C3D0A0C3ED920E7 /* Pods-MagicAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MagicAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hltcorp.MagicAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicApp.app/MagicApp";
+			};
+			name = Release;
+		};
+		302633A01D1AF17E00B16C27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC4741EABF0EA0DFC1E4C829 /* Pods-MagicAppUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = MagicAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hltcorp.MagicAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MagicApp;
+			};
+			name = Debug;
+		};
+		302633A11D1AF17E00B16C27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 846C232F347219606744E47B /* Pods-MagicAppUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = MagicAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hltcorp.MagicAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MagicApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		302633691D1AF17D00B16C27 /* Build configuration list for PBXProject "MagicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				302633971D1AF17E00B16C27 /* Debug */,
+				302633981D1AF17E00B16C27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		302633991D1AF17E00B16C27 /* Build configuration list for PBXNativeTarget "MagicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3026339A1D1AF17E00B16C27 /* Debug */,
+				3026339B1D1AF17E00B16C27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3026339C1D1AF17E00B16C27 /* Build configuration list for PBXNativeTarget "MagicAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3026339D1D1AF17E00B16C27 /* Debug */,
+				3026339E1D1AF17E00B16C27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3026339F1D1AF17E00B16C27 /* Build configuration list for PBXNativeTarget "MagicAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				302633A01D1AF17E00B16C27 /* Debug */,
+				302633A11D1AF17E00B16C27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		302633781D1AF17D00B16C27 /* MagicApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				302633791D1AF17D00B16C27 /* MagicApp.xcdatamodel */,
+			);
+			currentVersion = 302633791D1AF17D00B16C27 /* MagicApp.xcdatamodel */;
+			path = MagicApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 302633661D1AF17D00B16C27 /* Project object */;
+}
