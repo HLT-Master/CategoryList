@@ -83,7 +83,8 @@ class CategoryListTests: XCTestCase {
         
         //Run
         let controller = ViewController.init()
-        let categories = controller.loadCategoriesFromDatabase()
+        let categories = controller.loadCategoriesFromDatabase()!
+        controller.parentCategory = nil
         XCTAssertEqual(categories.count, 3)
         XCTAssertTrue(categories.contains(categoryA))
         XCTAssertTrue(categories.contains(categoryB))
@@ -122,23 +123,28 @@ class CategoryListTests: XCTestCase {
     }
     
     
-    func testInsertCategories() {
+    func testInsertOrUpdateCategories() {
 
         //Setup
-        let categoryOne = ["name" : "Category One", "id" : 1]
-        let categoryTwo = ["name" : "Category Two", "id" : 2]
+        let categoryOne = ["name" : "Category One",
+                           "id" : 1,
+                           "is_free" : true]
+        
+        let categoryTwo = ["name" : "Category Two",
+                           "id" : 2,
+                           "is_free" : false]
+        
         let categories = [categoryOne, categoryTwo] as [[String : AnyObject]]
         
         //Run
         let controller = ViewController.init()
-        controller.insertCategories(categories)
+        controller.insertOrUpdateCategories(categories)
         
         
         //Verify
         let fetchRequest = NSFetchRequest(entityName: "Category")
         do {
-            let results =
-                try managedContext.executeFetchRequest(fetchRequest)
+            let results = try managedContext.executeFetchRequest(fetchRequest)
             XCTAssertEqual(results.count, 2)
             XCTAssertTrue(results.contains({$0.name == "Category One" && $0.id == 1}))
             XCTAssertTrue(results.contains({$0.name == "Category Two" && $0.id == 2}))
@@ -150,6 +156,5 @@ class CategoryListTests: XCTestCase {
         
         
     }
-
  
 }

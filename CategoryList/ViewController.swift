@@ -14,17 +14,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var categories : [Category]? = [Category]()
     var parentCategory : Category?
-    var managedContext : NSManagedObjectContext!
     
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Get our managed object context from the app delegate
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        managedContext = appDelegate.managedObjectContext
         
         //Set up tableview cells
         tableView.registerClass(UITableViewCell.self,
@@ -54,6 +49,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
 
+    func managedContext() -> NSManagedObjectContext {
+        //Get our managed object context from the app delegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.managedObjectContext
+    }
 
     func loadCategoriesFromDatabase() -> [Category]? {
         
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //Execute the fetch request
         do {
             let results =
-                try managedContext.executeFetchRequest(fetchRequest) as! [Category]
+                try managedContext().executeFetchRequest(fetchRequest) as! [Category]
             return results
         } catch let error as NSError {
             print("Error: %@", error)
@@ -112,8 +112,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.insertOrUpdateCategory(attributes)
         }
         
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
+        //Save!
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.saveContext()
         
     }
@@ -126,7 +126,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let fetchRequest = NSFetchRequest(entityName: "Category")
             fetchRequest.predicate = NSPredicate(format: "id = %@", id)
             let results =
-                try managedContext.executeFetchRequest(fetchRequest) as! [Category]
+                try managedContext().executeFetchRequest(fetchRequest) as! [Category]
             if(results.count > 0) {
                 return results.first
             } else {
@@ -149,8 +149,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             
             //Category does not yet exist, create a new one and return it
-            let categoryEntity = NSEntityDescription.entityForName("Category", inManagedObjectContext: managedContext)
-            let category = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext) as! Category
+            let categoryEntity = NSEntityDescription.entityForName("Category", inManagedObjectContext: managedContext())
+            let category = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext()) as! Category
             return category
             
         }
