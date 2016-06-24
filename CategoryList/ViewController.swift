@@ -26,8 +26,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                                 forCellReuseIdentifier: "Cell")
 
         
-        //If this is the top level (parentCategory == nil), fetch the data from the API. Otherwise, don't fetch anything,
-        //we don't need to fetch more than once
+        //If this is the top level (parentCategory == nil), fetch the data from the API. Otherwise, don't fetch anything.
+        //We don't need to fetch more than once. Note: this is probably not the greatest design.
         
         if self.parentCategory == nil {
             self.fetchCategoriesFromAPI { (categoryData) in
@@ -50,7 +50,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
 
     func managedContext() -> NSManagedObjectContext {
-        //Get our managed object context from the app delegate
+        
+        //Just a convenience function to get our managed object context
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.managedObjectContext
     }
@@ -112,15 +114,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.insertOrUpdateCategory(attributes)
         }
         
-        //Save!
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.saveContext()
-        
     }
     
-    func categoryExists(id: NSNumber) -> Category? {
+    func categoryForID(id: NSNumber) -> Category? {
 
-        //See if we already have a category matching this id
+        //See if have a category matching this id. If so, return it. Otherwise return nil.
         
         do {
             let fetchRequest = NSFetchRequest(entityName: "Category")
@@ -141,7 +139,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func insertCategoryIfNotDuplicate(id: NSNumber) -> Category {
         
-        if let category = self.categoryExists(id){
+        if let category = self.categoryForID(id){
             
             //Category already exists, return it!
             return category
@@ -151,6 +149,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //Category does not yet exist, create a new one and return it
             let categoryEntity = NSEntityDescription.entityForName("Category", inManagedObjectContext: managedContext())
             let category = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext()) as! Category
+            category.id = id
+            save()
             return category
             
         }
@@ -185,8 +185,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         }
         
+        save()
+        
         return category
         
+    }
+    
+    func save() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.saveContext()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -212,7 +219,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell?.imageView!.image = nil
         } else {
             cell?.imageView!.image = UIImage(named:"icon-lock")?.imageWithRenderingMode(.AlwaysTemplate)
-            cell?.imageView!.tintColor = UIColor.redColor()
+            cell?.imageView!.tintColor = UIColor.darkGrayColor()
         }
             
         //If the category has children, show an arrow on the right. Otherwise show nothing

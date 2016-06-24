@@ -28,7 +28,6 @@ class CategoryListTests: XCTestCase {
         let fetchRequest = NSFetchRequest(entityName: "Category")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
-        
         do {
             
             let persistentCoordinator = appDelegate.persistentStoreCoordinator
@@ -39,7 +38,6 @@ class CategoryListTests: XCTestCase {
             print("error %@", error)
             XCTFail()
         }
-
         
     }
     
@@ -49,37 +47,41 @@ class CategoryListTests: XCTestCase {
         super.tearDown()
     }
     
+    func createFixture() -> CategoryList.Category  {
+    
+        let categoryEntity = NSEntityDescription.entityForName("Category", inManagedObjectContext: self.managedContext!)
+        let category = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext) as! CategoryList.Category
+        category.name = "Category Fixture"
+        category.id = 1
+        category.isFree = false
+        
+        save()
+        
+        return category
+    
+    }
+    
+    func save() {
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.saveContext()
+    }
+    
     func testLoadCategoriesFromDatabase_NoParentCategory() {
         
         //
         //Insert a few categories
         //
         
-        let categoryEntity = NSEntityDescription.entityForName("Category", inManagedObjectContext: self.managedContext!)
-        
-        //Insert category A
-        let categoryA = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext) as! CategoryList.Category
-        categoryA.name = "Category A"
+
+        let categoryA = createFixture()
         categoryA.id = 1
-        categoryA.isFree = false
         
-        //Insert category B
-        let categoryB = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext) as! CategoryList.Category
-        categoryB.name = "Category B"
+        let categoryB = createFixture()
         categoryB.id = 2
-        categoryB.isFree = true
 
-        
-        //Insert category C
-        let categoryC = NSManagedObject(entity: categoryEntity!, insertIntoManagedObjectContext: managedContext) as! CategoryList.Category
-        categoryC.name = "Category C"
+        let categoryC = createFixture()
         categoryC.id = 3
-        categoryC.isFree = false
-
-        
-        let appDelegate =
-            UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.saveContext()
         
         //Run
         let controller = ViewController.init()
@@ -92,10 +94,12 @@ class CategoryListTests: XCTestCase {
         
     }
     
+    /*
     func testLoadCategoriesFromDatabase_WithParentCategory() {
 
     }
-    
+ */
+ 
     func testFetchCategoriesFromAPI() {
     
         let categoryOne = ["name" : "Category One", "id" : 1]
@@ -106,9 +110,9 @@ class CategoryListTests: XCTestCase {
 
         let expectation = expectationWithDescription("expecting completion block to be called")
         
-        let controller = ViewController.init()
  
         //Run and verify
+        let controller = ViewController.init()
         controller.fetchCategoriesFromAPI { (categoryData) in
             
             XCTAssertEqual(categoryData!, records)
@@ -157,4 +161,118 @@ class CategoryListTests: XCTestCase {
         
     }
  
+    func testCategoryForID_DoesExist() {
+        
+        //Add a category
+        let categoryFixture = createFixture()
+        
+        //Run
+        let controller = ViewController.init()
+        let category = controller.categoryForID(categoryFixture.id!)
+        XCTAssertEqual(category, categoryFixture)
+
+    }
+    
+    
+    func testCategoryForID_DoesNotExist() {
+
+        let controller = ViewController.init()
+        let category = controller.categoryForID(1234)
+        XCTAssertNil(category)
+        
+    }
+    
+    func testInsertCategoryIfNotDuplicate_NotDuplicate() {
+        
+        let controller = ViewController.init()
+        let category = controller.insertCategoryIfNotDuplicate(1234)
+        XCTAssertNotNil(category)
+        XCTAssertEqual(category.id, 1234)
+        
+    }
+    
+    func testInsertCategoryIfNotDuplicate_IsDuplicate() {
+        
+        //Add a category
+        let categoryFixture = createFixture()
+        let controller = ViewController.init()
+        let category = controller.insertCategoryIfNotDuplicate(categoryFixture.id!)
+        
+        XCTAssertEqual(categoryFixture, category)
+        
+        //Make sure there is only one category in the database with this id
+        let fetchRequest = NSFetchRequest(entityName: "Category")
+        fetchRequest.predicate = NSPredicate(format: "id = \(categoryFixture.id!)")
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest) as! [CategoryList.Category]
+            XCTAssertEqual(results.count, 1)
+        } catch let error as NSError {
+            print("Error: %@", error)
+            XCTFail()
+        }
+        
+    }
+
+    func testInsertOrUpdateCategory_BadData() {
+        
+        //Create some bad attributes
+        let attributes = ["foo" : "this is not a category",
+                          "bar" : 1,
+                          "baz" : true]
+        
+        //Run
+        let controller = ViewController.init()
+        let category = controller.insertOrUpdateCategory(attributes)
+        
+        //This should be nil, because the attributes can not be used to create a category
+        XCTAssertNil(category)
+        
+        
+    }
+    
+    func testInsertOrUpdateCategory_Insert() {
+        
+        let parent = createFixture()
+        let attributes = ["name" : "Category One",
+                          "id" : 1,
+                          "is_free" : true,
+                          "parent_category_id" : parent.id!]
+        
+        //Run
+        let controller = ViewController.init()
+        let category = controller.insertOrUpdateCategory(attributes)!
+        
+        //Verify
+        XCTAssertEqual(category.name, "Category One")
+        XCTAssertEqual(category.id, 1)
+        XCTAssertEqual(category.isFree, true)
+        XCTAssertEqual(category.parentCategory, parent)
+        
+    }
+    
+    func testInsertOrUpdateCategory_Update() {
+
+        let parent = createFixture()
+        let child = createFixture()
+        child.id = 834
+        child.name = "This name should be updated"
+        
+        let attributes = ["name" : "Updated name",
+                          "id" : 834,
+                          "is_free" : true,
+                          "parent_category_id" : parent.id!]
+        
+        //Run
+        let controller = ViewController.init()
+        let category = controller.insertOrUpdateCategory(attributes)!
+        
+        //Verify
+        XCTAssertEqual(category.name, "Updated name")
+        XCTAssertEqual(category.id, 834)
+        XCTAssertEqual(category.isFree, true)
+        XCTAssertEqual(category.parentCategory, parent)
+        
+    }
+    
 }
