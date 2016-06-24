@@ -11,6 +11,7 @@ target 'CategoryList' do
   target 'CategoryListTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Mockingjay'
   end
 
   target 'CategoryListUITests' do
